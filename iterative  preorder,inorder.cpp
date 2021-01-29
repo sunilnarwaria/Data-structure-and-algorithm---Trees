@@ -49,8 +49,7 @@ void preorderIterative(Node* root)
         }
     }
 }
- 
-// Driver Code
+
 int main()
 {
     Node* root = new Node(10);
