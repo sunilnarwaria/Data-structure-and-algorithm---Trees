@@ -1,5 +1,23 @@
+// Time complexity O(n) and space O(1)  
+void flatten(TreeNode* root) {
+          
+         if (root == NULL) return;
+        while (root != NULL) {
+            TreeNode* left = root->left;
+            if (left != NULL) {
+                while (left->right != NULL) {
+                    left = left->right;
+                }
+                left->right = root->right;
+                root->right = root->left;
+                root->left = NULL;
+            }
+            root = root->right;
+        }
+    }
+ 
 
- // just using preorder traversal in O(n) time and O(n) space
+// just using preorder traversal in O(n) time and O(n) space
  // this is not efficient
  
    vector<TreeNode*> temp;
